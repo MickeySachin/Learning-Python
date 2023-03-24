@@ -23,6 +23,40 @@ for i in range(nameLength):  # range( 0 to n-1 )
     if(i == (nameLength-1)):
         print("Everyone's fuck fucka fuck fuck!!!")
 
+print()
+ls1 = [3, 5, 6, 'Sachin']
+
+ls1Copy = ls1  # both the lists refer to same memory location thus changes reflects in both lists
+ls1Copy.append("Desu")
+print("Lists after append() -")
+print(ls1)
+print(ls1Copy)
+
+ls1SecondCopy = ls1.copy()  # copy() creates separate list thus refers to separate memory location 
+ls1SecondCopy.append('soham')
+print("\nLists after copy() -")
+print(ls1)
+print(ls1SecondCopy)
+
+
+# *********************************************************************** List comprehension
+listA = [i * i for i in range(1, 10)]
+print(listA)
+
+
+# *********************************************************************** Lambda functions
+evenNo = lambda x : x % 2 == 0
+
+for i in range(1, 11):
+    print(f'{i} is an even number - {evenNo(i)}')
+
+
+points = [(1, 3), (3,2), (4, -2), (-1, 9)]
+
+sortedPoints = sorted(points, key= lambda x : x[1])  # sorts the list w.r.t 'y-coordinate' of 'points' (x, y)
+print(f'points = {points}')  
+print(f'sortedPoints = {sortedPoints}')  
+
 
 # *********************************************************************** 2d list(matrix)
 matrix = [
@@ -181,7 +215,7 @@ print()
 players = ['sachin', 'desu', 'saurabh', 'soham']
 print("{x}'s turn!".format(x= random.choice(players)))  # choice(listName) returns a random element from specified list
 
-'''
+
 # *********************************************************************** Directories and files
 from pathlib import Path
 
@@ -209,6 +243,6 @@ print("List of all files and directories in current directory = ")
 for file in path1.glob('*'):  # glob(arg) used to traverse in a directory - (* - means everything under current directory, *.ext - specific extension files)
     print(file)
 
-
+'''
 
 
